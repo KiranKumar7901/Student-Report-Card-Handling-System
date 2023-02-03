@@ -43,6 +43,11 @@ public class entry_editMenu extends JFrame{
 			setVisible(false);
 		});
 		
+		delete.addActionListener(e -> {
+			deleteRecord dr = new deleteRecord();
+			setVisible(false);
+		});
+		
 		main.addActionListener(e -> {
 			mainMenu mn = new mainMenu();
 			setVisible(false);

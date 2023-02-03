@@ -9,6 +9,7 @@ public class main {
 //		modifyRecord m=new modifyRecord();
 //		StudentReportCard src = new StudentReportCard();
 //		classResult cr = new classResult();
+//		deleteRecord d = new deleteRecord();
 	}
 
 }
