@@ -41,7 +41,7 @@ public class StudentReportCard extends JFrame{
 		setLayout(f);
 		setVisible(true);
 		setSize(1080, 640);
-		setVgap(10);
+		f.setVgap(5);
 
 		mainpanel =new JPanel(new GridLayout(5,1));
 		p1 = new JPanel(new GridLayout());
@@ -53,7 +53,7 @@ public class StudentReportCard extends JFrame{
 		
 		rn = new JLabel("Enter Roll No: ");
 		rn1 = new TextField();
-		rn2 = new JButton("Search for a Record");
+		rn2 = new JButton("Search for a Report Card Of a Student");
 		p2.add(rn);
 		p2.add(rn1);
 		p2.add(rn2);
@@ -65,57 +65,57 @@ public class StudentReportCard extends JFrame{
 		
 		
 		
-		name = new JLabel("Name:  ",JLabel.RIGHT);
-		name.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+		name = new JLabel("<html><style>div{color: blue; font-size: 18px; font-weight: bold; font-family: 'times new roman';}</style><div>Name: </div></html>",JLabel.RIGHT);
 		tname = new JLabel();
 		tname.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-		rollno = new JLabel("Roll No:  ",JLabel.RIGHT);
-		rollno.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+		rollno = new JLabel("<html><style>div{color: blue; font-size: 18px; font-weight: bold; font-family: 'times new roman';}</style><div>Roll No: </div></html>",JLabel.RIGHT);
+		rollno.setFont(new Font("Times New Roman", Font.BOLD, 18));
 		trn = new JLabel();
 		trn.setFont(new Font("Times New Roman", Font.PLAIN, 18));
 		sub = new JLabel("Subjects");
-		sub.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-		marks = new JLabel("Marks Obtained");
-		marks.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-		tmarks = new JLabel("Total Marks");
-		tmarks.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+		sub.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		marks = new JLabel("Marks Obtained",JLabel.CENTER);
+		marks.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		tmarks = new JLabel("Total Marks",JLabel.CENTER);
+		tmarks.setFont(new Font("Times New Roman", Font.BOLD, 18));
 		p = new JLabel("Physics");
 		p.setFont(new Font("Times New Roman", Font.PLAIN, 18));
 		tp = new JLabel();
+		tp.setAlignmentX(5000f);
 		tp.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-		tp100 = new JLabel("100");
+		tp100 = new JLabel("100",JLabel.CENTER);
 		tp100.setFont(new Font("Times New Roman", Font.PLAIN, 18));
 		m = new JLabel("Mathematics");
 		m.setFont(new Font("Times New Roman", Font.PLAIN, 18));
 		tm = new JLabel();
 		tm.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-		tm100 = new JLabel("100");
+		tm100 = new JLabel("100",JLabel.CENTER);
 		tm100.setFont(new Font("Times New Roman", Font.PLAIN, 18));
 		c = new JLabel("Chemistry");
 		c.setFont(new Font("Times New Roman", Font.PLAIN, 18));
 		tc = new JLabel();
 		tc.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-		tc100 = new JLabel("100");
+		tc100 = new JLabel("100",JLabel.CENTER);
 		tc100.setFont(new Font("Times New Roman", Font.PLAIN, 18));
 		e1 = new JLabel("English");
 		e1.setFont(new Font("Times New Roman", Font.PLAIN, 18));
 		te = new JLabel();
 		te.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-		te100 = new JLabel("100");
+		te100 = new JLabel("100",JLabel.CENTER);
 		te100.setFont(new Font("Times New Roman", Font.PLAIN, 18));
 		comp = new JLabel("Computer");
 		comp.setFont(new Font("Times New Roman", Font.PLAIN, 18));
 		tcomp = new JLabel();
 		tcomp.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-		tcs100 = new JLabel("100");
+		tcs100 = new JLabel("100",JLabel.CENTER);
 		tcs100.setFont(new Font("Times New Roman", Font.PLAIN, 18));
 		
 		per = new JLabel("Percentage: ",JLabel.RIGHT);
-		per.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+		per.setFont(new Font("Times New Roman", Font.BOLD, 18));
 		tper = new JLabel();
 		tper.setFont(new Font("Times New Roman", Font.PLAIN, 18));
 		grade = new JLabel("Grade: ",JLabel.RIGHT);
-		grade.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+		grade.setFont(new Font("Times New Roman", Font.BOLD, 18));
 		tgrade = new JLabel();
 		tgrade.setFont(new Font("Times New Roman", Font.PLAIN, 18));
 		
@@ -197,10 +197,5 @@ public class StudentReportCard extends JFrame{
 		
 		add(p2);
 		add(mainpanel);
-	}
-
-	private void setVgap(int i) {
-		// TODO Auto-generated method stub
-		
 	}
 }
