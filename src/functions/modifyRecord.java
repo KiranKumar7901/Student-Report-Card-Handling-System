@@ -47,7 +47,7 @@ public class modifyRecord extends JFrame {
 		setSize(1080, 540);
 //		f.setVgap(150);
 		
-		GridLayout gl=new GridLayout(4,1);
+		GridLayout gl=new GridLayout(3,1);
 		gl.setVgap(40);
 
 		mp = new JPanel(gl);
@@ -64,7 +64,7 @@ public class modifyRecord extends JFrame {
 		p4.add(rn3);
 		mp.add(p4);
 
-		rn = new JLabel("Enter Roll No ");
+		rn = new JLabel("Roll No ");
 		trn = new TextField();
 		name = new JLabel("Enter Name ");
 		tname = new TextField();
@@ -80,7 +80,6 @@ public class modifyRecord extends JFrame {
 		tcom = new TextField();
 		ed = new JLabel();
 		titl = new JButton("Modify Student Record");
-		titl.setBounds(0, 0, 50, 50);
 		back = new JButton("Back");
 
 		rn3.addActionListener(e -> {
@@ -117,8 +116,8 @@ public class modifyRecord extends JFrame {
 			p1.add(titl);
 			p1.add(back);
 			mp.add(p2);
-			mp.add(p1);
-			mp.add(p3);
+//			mp.add(p1);
+//			mp.add(p3);
 
 		});
 
@@ -156,5 +155,6 @@ public class modifyRecord extends JFrame {
 			setVisible(false);
 		});
 		add(mp);
+		add(p1);
 	}
 }
