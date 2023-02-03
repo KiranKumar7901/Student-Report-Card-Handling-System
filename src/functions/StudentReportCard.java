@@ -53,7 +53,7 @@ public class StudentReportCard extends JFrame{
 		
 		rn = new JLabel("Enter Roll No: ");
 		rn1 = new TextField();
-		rn2 = new JButton("Search for a Report Card Of a Student");
+		rn2 = new JButton("Search for Report Card Of a Student");
 		p2.add(rn);
 		p2.add(rn1);
 		p2.add(rn2);

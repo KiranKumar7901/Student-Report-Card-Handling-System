@@ -38,8 +38,13 @@ public class entry_editMenu extends JFrame{
 			createRecord cr = new createRecord();
 			setVisible(false);
 		});
+		
+		display.addActionListener(e -> {
+			displayRecord drr = new displayRecord();
+		});
+		
 		modify.addActionListener(e -> {
-			modifyRecord cr = new modifyRecord();
+			modifyRecord mr = new modifyRecord();
 			setVisible(false);
 		});
 		
