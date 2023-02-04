@@ -7,13 +7,13 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class StudentReportCard extends JFrame{
+public class searchRecord extends JFrame{
 	Student st =new Student();
 	JLabel rc,rc1,name,rollno,sub,p,m,c,e1,comp,marks,per,grade;
 	JLabel rn,tmarks,tname,trn,tp,tm,tc,te,tcomp,tp100,tm100,tc100,te100,tcs100,tper,tgrade;
 	TextField rn1;
-	JButton rn2,back;
-	JPanel p1,p2,p3,p4,p5,p6,mainpanel,p7;
+	JButton rn2;
+	JPanel p1,p2,p3,p4,p5,p6,mainpanel;
 	
 	int rn3;
 	String nam;
@@ -23,7 +23,7 @@ public class StudentReportCard extends JFrame{
 	Connection con;
 	ResultSet rs;
 	
-	public StudentReportCard() {
+	public searchRecord() {
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -40,35 +40,33 @@ public class StudentReportCard extends JFrame{
 		FlowLayout f = new FlowLayout();
 		setLayout(f);
 		setVisible(true);
-		setSize(1080, 640);
+		setSize(1080, 540);
 		f.setVgap(5);
 
 		mainpanel =new JPanel(new GridLayout(5,1));
 		p1 = new JPanel(new GridLayout());
-		p6 = new JPanel(new GridLayout());
 		p2 = new JPanel(new GridLayout(1, 3));
 		p3 = new JPanel(new GridLayout(1, 4));
 		p4 = new JPanel(new GridLayout(6, 3));
-		p5 = new JPanel(new GridLayout(2,1));
+		p5 = new JPanel(new GridLayout(1,4));
 		
-		rn = new JLabel(" Roll No: ");
+		rn = new JLabel("Roll No: ");
 		rn1 = new TextField();
-		rn2 = new JButton("Search for Report Card Of a Student");
+		rn2 = new JButton("Search for a Student");
 		p2.add(rn);
 		p2.add(rn1);
 		p2.add(rn2);
 		
-		rc = new JLabel(":----------------------------: Student Report Card :----------------------------:", JLabel.CENTER);
-		rc1 = new JLabel(":---------------------------------------::-------------------------------------:", JLabel.CENTER);
+		rc = new JLabel(":--: Record of a Student :--:", JLabel.CENTER);
 		rc.setFont(new Font("Times New Roman", Font.PLAIN, 36));
-		rc1.setFont(new Font("Times New Roman", Font.PLAIN, 36));
 		
 		
 		
-		name = new JLabel("<html><style>div{color: blue; font-size: 18px; font-weight: bold; font-family: 'times new roman';}</style><div>Name: </div></html>",JLabel.RIGHT);
+		name = new JLabel("Name: ",JLabel.RIGHT);
+		name.setFont(new Font("Times New Roman", Font.BOLD, 18));
 		tname = new JLabel();
 		tname.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-		rollno = new JLabel("<html><style>div{color: blue; font-size: 18px; font-weight: bold; font-family: 'times new roman';}</style><div>Roll No: </div></html>",JLabel.RIGHT);
+		rollno = new JLabel("Roll No: ",JLabel.RIGHT);
 		rollno.setFont(new Font("Times New Roman", Font.BOLD, 18));
 		trn = new JLabel();
 		trn.setFont(new Font("Times New Roman", Font.PLAIN, 18));
@@ -117,16 +115,11 @@ public class StudentReportCard extends JFrame{
 		per = new JLabel("Percentage: ",JLabel.RIGHT);
 		per.setFont(new Font("Times New Roman", Font.BOLD, 18));
 		tper = new JLabel();
-		tper.setHorizontalAlignment(SwingConstants.CENTER);
 		tper.setFont(new Font("Times New Roman", Font.PLAIN, 18));
 		grade = new JLabel("Grade: ",JLabel.RIGHT);
 		grade.setFont(new Font("Times New Roman", Font.BOLD, 18));
 		tgrade = new JLabel();
-		tgrade.setHorizontalAlignment(SwingConstants.CENTER);
 		tgrade.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-		
-		back = new JButton("Back");
-		back.setBounds(50,100,95,30);
 		
 		rn2.addActionListener(e -> {
 			rn3 = Integer.parseInt(rn1.getText());
@@ -182,19 +175,10 @@ public class StudentReportCard extends JFrame{
 				p4.add(tcomp);
 				p4.add(tcs100);
 				
-				JPanel p = new JPanel(new GridLayout(1,4));
-				JPanel d= new JPanel(new GridLayout(1,1));
-				
-				p.add(per);
-				p.add(tper);
-				p.add(grade);
-				p.add(tgrade);
-				d.add(back);
-				p5.add(p);
-				p5.add(d);
-				
-				
-				p6.add(rc1);
+				p5.add(per);
+				p5.add(tper);
+				p5.add(grade);
+				p5.add(tgrade);
 
 				con.close();
 			} catch (SQLException e1) {
@@ -205,11 +189,9 @@ public class StudentReportCard extends JFrame{
 		});
 		
 		mainpanel.add(p1);
-//		mainpanel.add(p2);
 		mainpanel.add(p3);
 		mainpanel.add(p4);
-		mainpanel.add(p5);		
-		mainpanel.add(p6);
+		mainpanel.add(p5);
 		
 		add(p2);
 		add(mainpanel);

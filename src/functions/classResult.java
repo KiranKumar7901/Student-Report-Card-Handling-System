@@ -13,7 +13,8 @@ public class classResult extends JFrame {
 	
 	Student st= new Student();
 	JLabel head, rno, name, p, c, m, e, cs, per, grade, tr, tn, tp, tc, tm, te, tcs,tper,tgrade;
-	JPanel p1, p2, p3;
+	JButton back;
+	JPanel p1, p2, p3,main;
 	int rln[] = new int[50];
 	int ph[] = new int[50];
 	int ch[] = new int[50];
@@ -61,34 +62,36 @@ public class classResult extends JFrame {
 		setLayout(f);
 		setVisible(true);
 		setSize(1080, 540);
+		
+		main = new JPanel(new GridLayout(2,1));
 		p1 = new JPanel(new GridLayout(1, 1));
 		p2 = new JPanel(new GridLayout(i , 9));
-		p3 = new JPanel(new GridLayout());
+		p3 = new JPanel(new GridLayout(1,1));
 
 		head = new JLabel(":----------------------------: All Students Result :----------------------------:",
 				JLabel.CENTER);
-		head.setFont(new Font("Times New Roman", Font.PLAIN, 36));
+		head.setFont(new Font("amasis mt pro black", Font.BOLD, 34));
 		p1.add(head);
-		add(p1);
+		main.add(p1);
 
 		rno = new JLabel("Roll No ",JLabel.CENTER);
-		rno.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+		rno.setFont(new Font("amasis mt pro black", Font.BOLD, 16));
 		name = new JLabel("Name ",JLabel.CENTER);
-		name.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+		name.setFont(new Font("amasis mt pro black", Font.BOLD, 16));
 		p = new JLabel("Physics ",JLabel.CENTER);
-		p.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+		p.setFont(new Font("amasis mt pro black", Font.BOLD, 16));
 		c = new JLabel("Chemistry ",JLabel.CENTER);
-		c.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+		c.setFont(new Font("amasis mt pro black", Font.BOLD, 16));
 		m = new JLabel("Mathematics  ",JLabel.CENTER);
-		m.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+		m.setFont(new Font("amasis mt pro black", Font.BOLD, 16));
 		e = new JLabel("English  ",JLabel.CENTER);
-		e.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+		e.setFont(new Font("amasis mt pro black", Font.BOLD, 16));
 		cs = new JLabel("Computer  ",JLabel.CENTER);
-		cs.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+		cs.setFont(new Font("amasis mt pro black", Font.BOLD, 16));
 		per = new JLabel("Percentage  ",JLabel.CENTER);
-		per.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+		per.setFont(new Font("amasis mt pro black", Font.BOLD, 16));
 		grade = new JLabel("Grade  ",JLabel.CENTER);
-		grade.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+		grade.setFont(new Font("amasis mt pro black", Font.BOLD, 16));
 
 		p2.add(rno);
 		p2.add(name);
@@ -102,14 +105,23 @@ public class classResult extends JFrame {
 
 		while (k < i) {
 			tr = new JLabel(Integer.toString(rln[k]),JLabel.CENTER);
+			tr.setFont(new Font("amasis mt pro black", Font.PLAIN, 14));
 			tn = new JLabel(nam[k],JLabel.CENTER);
+			tn.setFont(new Font("amasis mt pro black", Font.PLAIN, 14));
 			tp = new JLabel(Integer.toString(ph[k]),JLabel.CENTER);
+			tp.setFont(new Font("amasis mt pro black", Font.PLAIN, 14));
 			tc = new JLabel(Integer.toString(ch[k]),JLabel.CENTER);
+			tc.setFont(new Font("amasis mt pro black", Font.PLAIN, 14));
 			tm = new JLabel(Integer.toString(ma[k]),JLabel.CENTER);
+			tm.setFont(new Font("amasis mt pro black", Font.PLAIN, 14));
 			te = new JLabel(Integer.toString(en[k]),JLabel.CENTER);
+			te.setFont(new Font("amasis mt pro black", Font.PLAIN, 14));
 			tcs = new JLabel(Integer.toString(com[k]),JLabel.CENTER);
+			tcs.setFont(new Font("amasis mt pro black", Font.PLAIN, 14));
 			tper = new JLabel(Integer.toString(pert[k])+" %",JLabel.CENTER);
+			tper.setFont(new Font("amasis mt pro black", Font.PLAIN, 14));
 			tgrade = new JLabel(String.valueOf(gr[k]),JLabel.CENTER);
+			tgrade.setFont(new Font("amasis mt pro black", Font.PLAIN, 14));
 			p2.add(tr);
 			p2.add(tn);
 			p2.add(tp);
@@ -122,7 +134,18 @@ public class classResult extends JFrame {
 			k++;
 		}
 
-		add(p2);
+		main.add(p2);
+		
+		back = new JButton("Back");
+		back.setFont(new Font("amasis mt pro black",Font.BOLD,18));
+		p3.add(back);
+		add(main);
+		add(p3);
+		
+		back.addActionListener(e -> {
+			resultMenu rm = new resultMenu();
+			setVisible(false);
+		});
 
 		try {
 			con.close();
