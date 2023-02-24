@@ -38,7 +38,6 @@ public class classResult extends JFrame {
 			stmt = con.createStatement();
 			rs = stmt.executeQuery("select * from student order by rollno");
 			while (rs.next()) {
-				System.out.println(rs.getInt(1) + " " + rs.getString(2));
 				rln[i] = rs.getInt(1);
 				nam[i] = rs.getString(2);
 				ph[i] = rs.getInt(3);

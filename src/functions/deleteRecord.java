@@ -68,7 +68,6 @@ public class deleteRecord extends JFrame {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-			System.out.println(rollno);
 			d.setText("Record Successfully Deleted !!!");
 		});
 		back.addActionListener(e -> {

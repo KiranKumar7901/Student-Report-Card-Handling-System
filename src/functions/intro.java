@@ -33,9 +33,13 @@ public class intro extends JFrame implements ActionListener{
 		JLabel RNS = new JLabel("Roll No.: 23               Section: I",JLabel.CENTER);
 		RNS.setFont(new Font("times new roman",Font.PLAIN,20));
 		JButton b = new JButton("Click Me to See The Project....");
-		b.setForeground(new Color(0x072F5F));
-		Aname.setForeground(new Color(0x0000FF));
-		Uname.setForeground(new Color(0x0000FF));
+		b.setForeground(new Color(0x000033));
+		b.setBackground(new Color(0xC1C8E4));
+		Aname.setForeground(new Color(0x003366));
+		Uname.setForeground(new Color(0x330066));
+		project.setForeground(new Color(0x660000));
+		Pname.setForeground(new Color(0x330000));
+		RNS.setForeground(new Color(0x330066));
 		p1.add(project);
 		p1.add(Uname);
 		p1.add(Pname);

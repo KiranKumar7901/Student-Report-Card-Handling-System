@@ -96,7 +96,6 @@ public class createRecord extends JFrame {
 			ch = tc.getText();
 			en = te.getText();
 			comp = tcom.getText();
-			System.out.println(rollno + "\t" + nam + "\t" + ph + "\t" + ma + "\t" + ch + "\t" + en + "\t" + comp);
 			try {
 				ps.setInt(1, Integer.parseInt(rollno));
 				ps.setString(2, nam);
