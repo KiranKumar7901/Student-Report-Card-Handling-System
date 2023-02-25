@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class modifyRecord extends JFrame {
@@ -88,7 +89,6 @@ public class modifyRecord extends JFrame {
 			rollno = String.valueOf(rn4);
 			trn.setText(rollno);
 			trn.setEditable(false);
-			System.out.println(rn4);
 			try {
 				ps.setInt(7, Integer.parseInt(rollno));
 			} catch (NumberFormatException e1) {
@@ -129,7 +129,7 @@ public class modifyRecord extends JFrame {
 			ch = tc.getText();
 			en = te.getText();
 			comp = tcom.getText();
-			System.out.println(rollno + "\t" + nam + "\t" + ph + "\t" + ma + "\t" + ch + "\t" + en + "\t" + comp);
+			JOptionPane.showMessageDialog(null,"Record Updated !!!","Modify Record",JOptionPane.PLAIN_MESSAGE);
 			try {
 				ps.setString(1, nam);
 				ps.setInt(2, Integer.parseInt(ph));

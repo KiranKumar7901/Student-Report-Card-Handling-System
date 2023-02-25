@@ -12,7 +12,7 @@ public class StudentReportCard extends JFrame {
 	Student st = new Student();
 	JLabel rc, name, rollno, sub, p, m, c, e1, comp, marks, per, grade, nrf;
 	JLabel rn, tmarks, tname, trn, tp, tm, tc, te, tcomp, tp100, tm100, tc100, te100, tcs100, tper, tgrade;
-	TextField rn1;
+	JTextField rn1;
 	JButton rn2, back;
 	JPanel p1, p2, p3, p4, p5, p6, p7, mainpanel,nrfp;
 
@@ -45,19 +45,22 @@ public class StudentReportCard extends JFrame {
 
 		mainpanel = new JPanel(new GridLayout(3, 1));
 		p1 = new JPanel(new GridLayout(1, 3));
+		p1.setPreferredSize(new Dimension(400,80));
+		p1.setLayout(new FlowLayout(FlowLayout.CENTER,5,50));
 		p2 = new JPanel(new GridLayout(1, 1));
 		p3 = new JPanel(new GridLayout(1, 4));
 		p4 = new JPanel(new GridLayout(6, 3));
 		p5 = new JPanel(new GridLayout(1, 1));
 		p6 = new JPanel(new GridLayout(1, 1));
 		p7 = new JPanel(new GridLayout(1, 1));
-		nrfp = new JPanel();
 		
 
 		rn = new JLabel(" Roll No: ");
 		rn.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		rn1 = new TextField();
-		rn2 = new JButton("Search for Report Card Of a Student");
+		rn1 = new JTextField();
+		rn1.setPreferredSize(new Dimension(150,30));
+		rn2 = new JButton("Search");
+		rn2.setPreferredSize(new Dimension(150,30));
 		p1.add(rn);
 		p1.add(rn1);
 		p1.add(rn2);
@@ -67,13 +70,13 @@ public class StudentReportCard extends JFrame {
 		rc.setFont(new Font("Times New Roman", Font.PLAIN, 40));
 
 		name = new JLabel("Name: ", JLabel.RIGHT);
-		name.setFont(new Font("Times New Roman", Font.BOLD, 36));
+		name.setFont(new Font("Times New Roman", Font.BOLD, 32));
 		
 		tname = new JLabel();
 		tname.setFont(new Font("Times New Roman", Font.PLAIN, 28));
 		
 		rollno = new JLabel("Roll No: ", JLabel.RIGHT);
-		rollno.setFont(new Font("Times New Roman", Font.BOLD, 36));
+		rollno.setFont(new Font("Times New Roman", Font.BOLD, 32));
 		
 		trn = new JLabel();
 		trn.setFont(new Font("Times New Roman", Font.PLAIN, 28));
@@ -138,21 +141,18 @@ public class StudentReportCard extends JFrame {
 		tcs100.setFont(new Font("Times New Roman", Font.PLAIN, 24));
 
 		per = new JLabel("Percentage: ", JLabel.RIGHT);
-		per.setFont(new Font("Times New Roman", Font.BOLD, 28));
+		per.setFont(new Font("Times New Roman", Font.BOLD, 32));
 		
 		tper = new JLabel();
 		tper.setHorizontalAlignment(SwingConstants.CENTER);
-		tper.setFont(new Font("Times New Roman", Font.PLAIN, 26));
+		tper.setFont(new Font("Times New Roman", Font.PLAIN, 28));
 		
 		grade = new JLabel("Grade: ", JLabel.RIGHT);
-		grade.setFont(new Font("Times New Roman", Font.BOLD, 28));
+		grade.setFont(new Font("Times New Roman", Font.BOLD, 32));
 		
 		tgrade = new JLabel();
 		tgrade.setHorizontalAlignment(SwingConstants.CENTER);
-		tgrade.setFont(new Font("Times New Roman", Font.PLAIN, 26));
-
-		nrf = new JLabel("No Record Found!!!");
-		nrf.setFont(new Font("Times new roman", Font.PLAIN, 44));
+		tgrade.setFont(new Font("Times New Roman", Font.PLAIN, 28));
 		
 		back = new JButton("Back");
 		back.setFont(new Font("Times New Roman", Font.BOLD, 26));
@@ -227,10 +227,9 @@ public class StudentReportCard extends JFrame {
 					p6.add(back);
 				} 
 				else {
-					p6.add(back);
-					p7.add(nrf);
-					nrfp.add(p7);
-					nrfp.add(p6);
+					JOptionPane.showMessageDialog(null, "No Record Found !!!","Alert Message",JOptionPane.WARNING_MESSAGE);
+					resultMenu rs = new resultMenu();
+					setVisible(false);
 				}
 
 				con.close();
@@ -247,7 +246,6 @@ public class StudentReportCard extends JFrame {
 
 		add(p2);
 		add(mainpanel);
-		add(nrfp);
 		add(p6);
 
 	}

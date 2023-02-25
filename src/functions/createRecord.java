@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class createRecord extends JFrame {
@@ -89,7 +90,7 @@ public class createRecord extends JFrame {
 		add(p3);
 
 		titl.addActionListener(e -> {
-			ed.setText(" Student Record Created");
+			JOptionPane.showMessageDialog(null, "Student Record Created","Student Record",JOptionPane.PLAIN_MESSAGE);
 			rollno = trn.getText();
 			nam = tname.getText();
 			ph = tp.getText();
@@ -106,16 +107,12 @@ public class createRecord extends JFrame {
 				ps.setInt(6, Integer.parseInt(en));
 				ps.setInt(7, Integer.parseInt(comp));
 				ps.executeUpdate();
+				con.close();
 			} catch (NumberFormatException | SQLException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-			try {
-				con.close();
-			} catch (SQLException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
+			
 			entry_editMenu eem = new entry_editMenu();
 			setVisible(false);
 		});

@@ -22,10 +22,8 @@ public class deleteRecord extends JFrame {
 			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","");
 			ps = con.prepareStatement("delete from student where rollno=?");
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -35,29 +33,23 @@ public class deleteRecord extends JFrame {
 		setTitle("Delete Student Record");
 		setVisible(true);
 		setSize(1080,540);
-//		getContentPane().setBackground(new Color(0x000082));
 		f.setVgap(200);
 		
-		p1 = new JPanel(new GridLayout(1,3));
-		p2 = new JPanel(new GridLayout(1,1));
+		p1 = new JPanel(new GridLayout(1,2));
 		p3 = new JPanel(new GridLayout(1,1));
-		m = new JPanel(new GridLayout(3,1));
+		m = new JPanel(new GridLayout(2,1));
 		
 		rn = new JLabel("Enter Roll No ");
 		trn = new TextField();
 		brn = new JButton("Delete Record");
-		d = new JLabel();
-		d.setHorizontalAlignment(SwingConstants.CENTER);
 		back = new JButton("Back");
 		
 		p1.add(rn);
 		p1.add(trn);
 		p1.add(brn);
-		p2.add(d);
 		p3.add(back);
 		
 		m.add(p1);
-		m.add(p2);
 		m.add(p3);
 		
 		brn.addActionListener(e -> {
@@ -68,7 +60,7 @@ public class deleteRecord extends JFrame {
 			} catch (SQLException e1) {
 				e1.printStackTrace();
 			}
-			d.setText("Record Successfully Deleted !!!");
+			JOptionPane.showMessageDialog(null, "Record Successfully Deleted","Delete Record",JOptionPane.DEFAULT_OPTION);
 		});
 		back.addActionListener(e -> {
 			entry_editMenu e1 = new entry_editMenu();
