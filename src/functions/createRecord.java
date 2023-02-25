@@ -1,25 +1,14 @@
 package functions;
 import java.sql.*;
-
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
-import java.awt.TextField;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
+import java.awt.*;
+import javax.swing.*;
 
 public class createRecord extends JFrame {
 	Student st = new Student();
 	JButton titl, back;
 	JLabel rn, name, p, m, c, e, com, ed;
 	TextField trn, tname, tp, tm, tc, te, tcom;
-	JPanel p1, p2, p3;
+	JPanel p1, p2;
 	String rollno;
 	String nam;
 	String ph, ma, ch, en, comp;
@@ -32,10 +21,8 @@ public class createRecord extends JFrame {
 			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","");
 			ps = con.prepareStatement("insert into Student values (?,?,?,?,?,?,?)");
 		} catch (ClassNotFoundException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		} catch (SQLException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		
@@ -44,11 +31,12 @@ public class createRecord extends JFrame {
 		setTitle("Create Student Record");
 		setVisible(true);
 		setSize(1080, 540);
-		f.setVgap(150);
+		f.setVgap(30);
+		f.setHgap(400);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		p1 = new JPanel(new GridLayout(1, 2));
 		p2 = new JPanel(new GridLayout(7, 2));
-		p3 = new JPanel(new GridLayout(1, 1));
 
 		titl = new JButton("Create Student Record");
 		rn = new JLabel("Enter Roll No ");
@@ -65,7 +53,6 @@ public class createRecord extends JFrame {
 		te = new TextField();
 		com = new JLabel("Enter Computer Marks ");
 		tcom = new TextField();
-		ed = new JLabel();
 		back = new JButton("Back");
 
 		p2.add(rn);
@@ -82,15 +69,14 @@ public class createRecord extends JFrame {
 		p2.add(te);
 		p2.add(com);
 		p2.add(tcom);
+		
 		p1.add(titl);
 		p1.add(back);
-		p3.add(ed);
+		
 		add(p2);
 		add(p1);
-		add(p3);
 
 		titl.addActionListener(e -> {
-			JOptionPane.showMessageDialog(null, "Student Record Created","Student Record",JOptionPane.PLAIN_MESSAGE);
 			rollno = trn.getText();
 			nam = tname.getText();
 			ph = tp.getText();
@@ -107,9 +93,10 @@ public class createRecord extends JFrame {
 				ps.setInt(6, Integer.parseInt(en));
 				ps.setInt(7, Integer.parseInt(comp));
 				ps.executeUpdate();
+				JOptionPane.showMessageDialog(null, "Student Record Created","Student Record",JOptionPane.PLAIN_MESSAGE);
 				con.close();
 			} catch (NumberFormatException | SQLException e1) {
-				// TODO Auto-generated catch block
+				JOptionPane.showMessageDialog(null, "Record with Roll No "+rollno+" already exists","Student Record",JOptionPane.WARNING_MESSAGE);
 				e1.printStackTrace();
 			}
 			

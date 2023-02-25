@@ -21,6 +21,7 @@ public class intro extends JFrame implements ActionListener{
 		setVisible(true);
 		setSize(1080, 540);
 		setTitle("HomePage");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JPanel p1, p2;
 		p1 = new JPanel(new GridLayout(6, 1));

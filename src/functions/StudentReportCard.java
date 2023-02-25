@@ -39,6 +39,8 @@ public class StudentReportCard extends JFrame {
 		FlowLayout f = new FlowLayout();
 		setLayout(f);
 		setVisible(true);
+		f.setVgap(30);
+		f.setHgap(500);
 		setSize(1080, 640);
 		setTitle("Student Report Card");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -46,15 +48,18 @@ public class StudentReportCard extends JFrame {
 		mainpanel = new JPanel(new GridLayout(3, 1));
 		p1 = new JPanel(new GridLayout(1, 3));
 		p1.setPreferredSize(new Dimension(400,80));
-		p1.setLayout(new FlowLayout(FlowLayout.CENTER,5,50));
-		p2 = new JPanel(new GridLayout(1, 1));
+		p1.setLayout(new FlowLayout(FlowLayout.CENTER,5,25));
+		p2 = new JPanel(new GridLayout(1,4));
 		p3 = new JPanel(new GridLayout(1, 4));
 		p4 = new JPanel(new GridLayout(6, 3));
-		p5 = new JPanel(new GridLayout(1, 1));
+		p5 = new JPanel(new GridLayout(1, 4));
 		p6 = new JPanel(new GridLayout(1, 1));
 		p7 = new JPanel(new GridLayout(1, 1));
 		
-
+		rc = new JLabel(":----------: Student Report Card :----------:", JLabel.CENTER);
+		rc.setFont(new Font("Times New Roman", Font.PLAIN, 40));
+		add(rc);
+		
 		rn = new JLabel(" Roll No: ");
 		rn.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		rn1 = new JTextField();
@@ -64,10 +69,7 @@ public class StudentReportCard extends JFrame {
 		p1.add(rn);
 		p1.add(rn1);
 		p1.add(rn2);
-		add(p1);
 
-		rc = new JLabel(":----------: Student Report Card :----------:", JLabel.CENTER);
-		rc.setFont(new Font("Times New Roman", Font.PLAIN, 40));
 
 		name = new JLabel("Name: ", JLabel.RIGHT);
 		name.setFont(new Font("Times New Roman", Font.BOLD, 32));
@@ -144,18 +146,17 @@ public class StudentReportCard extends JFrame {
 		per.setFont(new Font("Times New Roman", Font.BOLD, 32));
 		
 		tper = new JLabel();
-		tper.setHorizontalAlignment(SwingConstants.CENTER);
 		tper.setFont(new Font("Times New Roman", Font.PLAIN, 28));
 		
 		grade = new JLabel("Grade: ", JLabel.RIGHT);
 		grade.setFont(new Font("Times New Roman", Font.BOLD, 32));
 		
 		tgrade = new JLabel();
-		tgrade.setHorizontalAlignment(SwingConstants.CENTER);
 		tgrade.setFont(new Font("Times New Roman", Font.PLAIN, 28));
 		
-		back = new JButton("Back");
+		back = new JButton("Back to Result Menu");
 		back.setFont(new Font("Times New Roman", Font.BOLD, 26));
+		back.setPreferredSize(new Dimension(450,40));
 
 		rn2.addActionListener(e -> {
 			rn3 = Integer.parseInt(rn1.getText());
@@ -186,15 +187,14 @@ public class StudentReportCard extends JFrame {
 					tc.setText(Integer.toString(ch));
 					te.setText(Integer.toString(en));
 					tcomp.setText(Integer.toString(cs));
-					tper.setText(Float.toString(pert));
+					tper.setText(Float.toString(pert)+" %");
 					tgrade.setText(String.valueOf(grad));
 
-					p2.add(rc);
 					
-					p3.add(name);
-					p3.add(tname);
-					p3.add(rollno);
-					p3.add(trn);
+					p2.add(name);
+					p2.add(tname);
+					p2.add(rollno);
+					p2.add(trn);
 					
 					p4.add(sub);
 					p4.add(marks);
@@ -220,9 +220,6 @@ public class StudentReportCard extends JFrame {
 					p5.add(grade);
 					p5.add(tgrade);
 
-					mainpanel.add(p3);
-					mainpanel.add(p4);
-					mainpanel.add(p5);
 
 					p6.add(back);
 				} 
@@ -244,8 +241,11 @@ public class StudentReportCard extends JFrame {
 			setVisible(false);
 		});
 
+		
+		add(p1);
 		add(p2);
-		add(mainpanel);
+		add(p4);
+		add(p5);
 		add(p6);
 
 	}

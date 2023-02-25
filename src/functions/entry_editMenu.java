@@ -13,6 +13,7 @@ public class entry_editMenu extends JFrame{
 		setVisible(true);
 		setSize(1080,540);
 		f.setVgap(120);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		p3= new JPanel(new GridLayout(2,1));
 		p1 = new JPanel(new GridLayout(1,1));
@@ -52,6 +53,7 @@ public class entry_editMenu extends JFrame{
 		
 		display.addActionListener(e -> {
 			displayRecord drr = new displayRecord();
+			setVisible(false);
 		});
 		
 		modify.addActionListener(e -> {

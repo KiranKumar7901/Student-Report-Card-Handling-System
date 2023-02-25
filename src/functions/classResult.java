@@ -62,6 +62,7 @@ public class classResult extends JFrame {
 		setTitle("Result of All Students");
 		setVisible(true);
 		setSize(1080, 540);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		main = new JPanel(new GridLayout(2,1));
 		p1 = new JPanel(new GridLayout(1, 1));
@@ -76,7 +77,7 @@ public class classResult extends JFrame {
 
 		rno = new JLabel("Roll No ",JLabel.CENTER);
 		rno.setFont(new Font("amasis mt pro black", Font.BOLD, 16));
-		name = new JLabel("Name ",JLabel.CENTER);
+		name = new JLabel("Name ");
 		name.setFont(new Font("amasis mt pro black", Font.BOLD, 16));
 		p = new JLabel("Physics ",JLabel.CENTER);
 		p.setFont(new Font("amasis mt pro black", Font.BOLD, 16));
@@ -106,7 +107,7 @@ public class classResult extends JFrame {
 		while (k < i) {
 			tr = new JLabel(Integer.toString(rln[k]),JLabel.CENTER);
 			tr.setFont(new Font("amasis mt pro black", Font.PLAIN, 14));
-			tn = new JLabel(nam[k],JLabel.CENTER);
+			tn = new JLabel(nam[k]);
 			tn.setFont(new Font("amasis mt pro black", Font.PLAIN, 14));
 			tp = new JLabel(Integer.toString(ph[k]),JLabel.CENTER);
 			tp.setFont(new Font("amasis mt pro black", Font.PLAIN, 14));
@@ -137,7 +138,8 @@ public class classResult extends JFrame {
 		main.add(p2);
 		
 		back = new JButton("Back");
-		back.setFont(new Font("amasis mt pro black",Font.BOLD,18));
+		back.setFont(new Font("amasis mt pro black",Font.BOLD,24));
+		back.setPreferredSize(new Dimension(200,40));
 		p3.add(back);
 		add(main);
 		add(p3);

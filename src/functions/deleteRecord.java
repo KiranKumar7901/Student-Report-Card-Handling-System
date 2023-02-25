@@ -34,6 +34,7 @@ public class deleteRecord extends JFrame {
 		setVisible(true);
 		setSize(1080,540);
 		f.setVgap(200);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		p1 = new JPanel(new GridLayout(1,2));
 		p3 = new JPanel(new GridLayout(1,1));

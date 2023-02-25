@@ -43,6 +43,7 @@ public class searchRecord extends JFrame{
 		setSize(1080, 540);
 		f.setVgap(5);
 		setTitle("Search Record of Students");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		mainpanel =new JPanel(new GridLayout(5,1));
 		p1 = new JPanel(new GridLayout());

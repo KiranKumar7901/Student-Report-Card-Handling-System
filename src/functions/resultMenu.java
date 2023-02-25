@@ -20,6 +20,7 @@ public class resultMenu extends JFrame{
 		setSize(1080,540);
 		f.setVgap(140);
 		setTitle("Result Menu");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JPanel p,p1,p2,p3;
 		p=new JPanel(new GridLayout(3,1));
