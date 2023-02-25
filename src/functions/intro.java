@@ -20,6 +20,8 @@ public class intro extends JFrame implements ActionListener{
 		f.setVgap(100);
 		setVisible(true);
 		setSize(1080, 540);
+		setTitle("HomePage");
+		
 		JPanel p1, p2;
 		p1 = new JPanel(new GridLayout(6, 1));
 		JLabel project = new JLabel("Mini Project",JLabel.CENTER);

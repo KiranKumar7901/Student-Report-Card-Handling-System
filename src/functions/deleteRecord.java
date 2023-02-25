@@ -1,5 +1,4 @@
 package functions;
-
 import java.sql.*;
 import java.awt.*;
 import javax.swing.*;
@@ -33,8 +32,10 @@ public class deleteRecord extends JFrame {
 		
 		FlowLayout f =new FlowLayout();
 		setLayout(f);
+		setTitle("Delete Student Record");
 		setVisible(true);
 		setSize(1080,540);
+//		getContentPane().setBackground(new Color(0x000082));
 		f.setVgap(200);
 		
 		p1 = new JPanel(new GridLayout(1,3));
@@ -65,7 +66,6 @@ public class deleteRecord extends JFrame {
 				ps.setInt(1, rollno);
 				ps.executeUpdate();
 			} catch (SQLException e1) {
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
 			d.setText("Record Successfully Deleted !!!");

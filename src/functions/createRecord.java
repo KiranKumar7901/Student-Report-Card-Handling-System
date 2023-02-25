@@ -40,6 +40,7 @@ public class createRecord extends JFrame {
 		
 		FlowLayout f = new FlowLayout();
 		setLayout(f);
+		setTitle("Create Student Record");
 		setVisible(true);
 		setSize(1080, 540);
 		f.setVgap(150);

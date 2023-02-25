@@ -45,6 +45,7 @@ public class modifyRecord extends JFrame {
 		setLayout(f);
 		setVisible(true);
 		setSize(1080, 540);
+		setTitle("Modify Student Record");
 //		f.setVgap(150);
 		
 		GridLayout gl=new GridLayout(3,1);

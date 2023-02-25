@@ -59,6 +59,7 @@ public class classResult extends JFrame {
 
 		FlowLayout f = new FlowLayout();
 		setLayout(f);
+		setTitle("Result of All Students");
 		setVisible(true);
 		setSize(1080, 540);
 		

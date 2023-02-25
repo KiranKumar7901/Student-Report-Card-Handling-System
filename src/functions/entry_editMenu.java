@@ -9,6 +9,7 @@ public class entry_editMenu extends JFrame{
 	public entry_editMenu(){
 		FlowLayout f =new FlowLayout();
 		setLayout(f);
+		setTitle("Entry_Edit_Menu");
 		setVisible(true);
 		setSize(1080,540);
 		f.setVgap(120);

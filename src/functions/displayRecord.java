@@ -60,6 +60,7 @@ public class displayRecord extends JFrame {
 
 		FlowLayout f = new FlowLayout();
 		setLayout(f);
+		setTitle("Record of Students");
 		setVisible(true);
 		setSize(1080, 540);
 

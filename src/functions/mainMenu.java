@@ -19,6 +19,8 @@ public class mainMenu extends JFrame implements ActionListener{
 		setVisible(true);
 		setSize(1080,540);
 		f.setVgap(140);
+		setTitle("Main Menu");
+		
 		JPanel p,p1,p2,p3;
 		p=new JPanel(new GridLayout(3,1));
 		p1 = new JPanel(new GridLayout(1,1));
