@@ -18,7 +18,8 @@ public class createRecord extends JFrame {
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","");
+			// con=DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","");
+			con=DriverManager.getConnection("b5ybjb0rguk9bnfnm3qr-mysql.services.clever-cloud.com","uwfsctyutchk44qa","uwfsctyutchk44qa");
 			ps = con.prepareStatement("insert into Student values (?,?,?,?,?,?,?)");
 		} catch (ClassNotFoundException e1) {
 			e1.printStackTrace();
