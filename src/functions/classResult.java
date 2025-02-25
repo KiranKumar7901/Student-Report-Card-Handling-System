@@ -34,7 +34,8 @@ public class classResult extends JFrame {
 
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "");
+			// con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "");
+			con=DriverManager.getConnection("b5ybjb0rguk9bnfnm3qr-mysql.services.clever-cloud.com","uwfsctyutchk44qa","uwfsctyutchk44qa");
 			stmt = con.createStatement();
 			rs = stmt.executeQuery("select * from student order by rollno");
 			while (rs.next()) {
